@@ -1,0 +1,36 @@
+{
+  "name": "khatfield/laravel-pardot",
+  "description": "Laravel Package for Pardot API using hgg/pardot wrapper",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Keith Hatfield",
+      "email": "keith.hatfield@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "repositories": [{
+    "type": "composer",
+    "url": "https://repos.hatfield.me"
+  }],
+  "require": {
+    "php": "^7.1.3",
+    "ext-json": "*",
+    "hgg/pardot": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Khatfield\\LaravelPardot\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Khatfield\\LaravelPardot\\Providers\\PardotServiceProvider"
+      ],
+      "aliases": {
+        "Neutrino": "Khatfield\\LaravelPardot\\Facades\\Pardot"
+      }
+    }
+  }
+}
