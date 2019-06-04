@@ -29,7 +29,7 @@
         "Khatfield\\LaravelPardot\\Providers\\PardotServiceProvider"
       ],
       "aliases": {
-        "Neutrino": "Khatfield\\LaravelPardot\\Facades\\Pardot"
+        "Pardot": "Khatfield\\LaravelPardot\\Facades\\Pardot"
       }
     }
   }
