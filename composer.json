@@ -1,5 +1,5 @@
 {
-  "name": "khatfield/laravel-pardot",
+  "name": "sowizardly/laravel-pardot",
   "description": "Laravel Package for Pardot API using hgg/pardot wrapper",
   "license": "MIT",
   "authors": [
