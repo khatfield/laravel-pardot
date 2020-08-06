@@ -1,8 +1,7 @@
 <?php
 
 return [
-    'username' => env('PARDOT_USERNAME'),
+    'email'    => env('PARDOT_EMAIL'),
     'password' => env('PARDOT_PASSWORD'),
-    'user_key' => env('PARDOT_USER_KEY'),
-    'camp_id'  => env('PARDOT_DEFAULT_CAMPAIGN', false),
+    'user_key' => env('PARDOT_USER_KEY')
 ];
