@@ -21,6 +21,10 @@
       $password = $config->get('pardot.password');
 
       $this->client = new PardotApi($email, $user_key, $password);
+
+      if($config->get("app.debug") == true) {
+        $this->client->setDebug(true);
+      }
     }
 
     public function __call($method, $args)
