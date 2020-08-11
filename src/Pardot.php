@@ -20,7 +20,7 @@
       $user_key = $config->get('pardot.user_key');
       $password = $config->get('pardot.password');
 
-      $this->client = new PardotApi($email, $user_key, $password);
+      $this->client = new PardotApi($email, $password, $user_key);
 
       if($config->get("app.debug") == true) {
         $this->client->setDebug(true);
