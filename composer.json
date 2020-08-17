@@ -14,7 +14,7 @@
     "url": "https://repos.hatfield.me"
   }],
   "require": {
-    "khatfield/pardot-api": "^1.0"
+    "traderplanet/pardot-api": "^1.0"
   },
   "autoload": {
     "psr-4": {
