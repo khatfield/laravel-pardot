@@ -1,6 +1,6 @@
 {
-  "name": "sowizardly/laravel-pardot",
-  "description": "Laravel Package for Pardot API using hgg/pardot wrapper",
+  "name": "khatfield/laravel-pardot",
+  "description": "Laravel Package for Pardot API using traderplanet/pardot-api wrapper",
   "license": "MIT",
   "authors": [
     {
@@ -12,12 +12,9 @@
   "repositories": [{
     "type": "composer",
     "url": "https://repos.hatfield.me"
-  },{
-    "type": "vcs",
-    "url": "git@github.com:soWizardly/Pardot-API.git"
   }],
   "require": {
-    "sowizardly/pardot-api": "^1.0"
+    "khatfield/pardot-api": "^1.0"
   },
   "autoload": {
     "psr-4": {
