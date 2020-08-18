@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Khatfield\LaravelPardot;
+  namespace Khatfield\LaravelPardot;
 
 
-use HGG\Pardot\Connector;
-use Illuminate\Support\Collection;
+  use CyberDuck\Pardot\PardotApi;
+  use Illuminate\Support\Collection;
 
-class Pardot
-{
+  class Pardot
+  {
     protected $client;
 
     /**
@@ -16,21 +16,19 @@ class Pardot
      */
     public function connect($config)
     {
-        $username = $config->get('pardot.username');
-        $password = $config->get('pardot.password');
-        $user_key = $config->get('pardot.user_key');
+      $email    = $config->get('pardot.email');
+      $user_key = $config->get('pardot.user_key');
+      $password = $config->get('pardot.password');
 
-        $this->client = new Connector(
-            [
-                'email'    => $username,
-                'user-key' => $user_key,
-                'password' => $password,
-            ]
-        );
+      $this->client = new PardotApi($email, $password, $user_key);
+
+      if($config->get("app.debug") == true) {
+        $this->client->setDebug(true);
+      }
     }
 
     public function __call($method, $args)
     {
-        return call_user_func_array([$this->client, $method], $args);
+      return call_user_func_array([$this->client, $method], $args);
     }
-}
+  }
