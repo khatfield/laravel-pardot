@@ -14,11 +14,12 @@
     /**
      * @param Collection $config
      */
-    public function connect($config)
+    public function connect($config, $connection = null)
     {
-      $email    = $config->get('pardot.email');
-      $user_key = $config->get('pardot.user_key');
-      $password = $config->get('pardot.password');
+      $connection = $connection ?? $config->get("pardot.default");
+      $email      = $config->get("pardot.connections.{$connection}.email");
+      $password   = $config->get("pardot.connections.{$connection}.password");
+      $user_key   = $config->get("pardot.connections.{$connection}.user_key");
 
       $this->client = new PardotApi($email, $password, $user_key);
 
