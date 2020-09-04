@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Khatfield\LaravelPardot\Providers;
+  namespace Khatfield\LaravelPardot\Providers;
 
 
-use Illuminate\Support\ServiceProvider;
-use Khatfield\LaravelPardot\Pardot;
+  use Illuminate\Support\ServiceProvider;
+  use Khatfield\LaravelPardot\Pardot;
 
-class PardotServiceProvider extends ServiceProvider
-{
+  class PardotServiceProvider extends ServiceProvider
+  {
     /**
      * Register services.
      *
@@ -16,18 +16,17 @@ class PardotServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $config = realpath(__DIR__ . '/..') . '/config/pardot.php';
-        $this->mergeConfigFrom($config, 'pardot');
+      $config = realpath(__DIR__ . '/..') . '/config/pardot.php';
+      $this->mergeConfigFrom($config, 'pardot');
 
-        $this->app->singleton(Pardot::class, function($app)
-        {
-            $pardot = new Pardot();
-            $pardot->connect($app['config']);
+      $this->app->singleton(Pardot::class, function ($app) {
+        $pardot = new Pardot();
+        $pardot->connect($app['config']);
 
-            return $pardot;
-        });
+        return $pardot;
+      });
 
-        $this->app->alias(Pardot::class, 'pardot');
+      $this->app->alias(Pardot::class, 'pardot');
     }
 
     /**
@@ -37,15 +36,12 @@ class PardotServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $config = realpath(__DIR__ . '/..') . '/config/pardot.php';
-        $this->publishes(
-            [
-                $config => config_path('pardot.php'),
-            ], 'pardot-config');
+      $config = realpath(__DIR__ . '/..') . '/config/pardot.php';
+      $this->publishes([$config => config_path('pardot.php')], 'pardot-config');
     }
 
     public function provides()
     {
-        return ['pardot', Pardot::class];
+      return ['pardot', Pardot::class];
     }
-}
+  }
