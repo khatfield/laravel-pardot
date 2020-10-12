@@ -16,6 +16,20 @@
 
     /*
     |--------------------------------------------------------------------------
+    | Pardot Debug Mode
+    |--------------------------------------------------------------------------
+    |
+    | In debug mode, pardot will throw exceptions for many queries,
+    | which would otherwise return null. This can be useful for debugging,
+    | but difficult to work with in many scenarios.
+    | e.x., 'getProspect' by email will return either null or an exception if
+    | no Prospect has the given email.
+    |
+    */
+    'debug' => env('PARDOT_DEBUG_MODE', false),
+
+    /*
+    |--------------------------------------------------------------------------
     | Pardot Connections
     |--------------------------------------------------------------------------
     |
