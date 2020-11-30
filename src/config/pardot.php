@@ -37,10 +37,18 @@
     |
     */
     'connections' => [
+
       'default' => [
-        'email'    => env('PARDOT_EMAIL'),
-        'password' => env('PARDOT_PASSWORD'),
-        'user_key' => env('PARDOT_USER_KEY')
-      ],
+        'email'            => env('PARDOT_EMAIL'),
+        'password'         => env('PARDOT_PASSWORD'),
+        'user_key'         => env('PARDOT_USER_KEY'),
+        'auth_type'        => env('PARDOT_AUTH_TYPE', 'OAUTH'),
+        'business_unit_id' => env('PARDOT_BUSINESS_UNIT_ID'),
+        'consumer_key'     => env('PARDOT_CONSUMER_KEY'),
+        'consumer_secret'  => env('PARDOT_CONSUMER_SECRET')
+      ]
+
+      //...
+
     ],
   ];
