@@ -23,7 +23,7 @@
 
       $this->client = new PardotApi($email, $password, $user_key);
 
-      if($config->get("app.debug") == true) {
+      if($config->get("pardot.debug") == true) {
         $this->client->setDebug(true);
       }
     }
