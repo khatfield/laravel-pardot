@@ -16,7 +16,7 @@
   "require": {
     "php": "^8.1",
     "ext-json": "*",
-    "traderplanet/pardot-api": "^2"
+    "traderplanet/pardot-api": "^3"
   },
   "autoload": {
     "psr-4": {
