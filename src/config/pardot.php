@@ -40,6 +40,17 @@
 
     /*
     |--------------------------------------------------------------------------
+    | Pardot Default API Version
+    |--------------------------------------------------------------------------
+    |
+    | The default API Version to use if one is not specified by the connection
+    |
+    */
+    'default_api_version' => env('PARDOT_DEFAULT_API_VERSION', 4),
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Pardot Connections
     |--------------------------------------------------------------------------
     |
@@ -63,7 +74,8 @@
         'user_api_security_token' => env('PARDOT_USER_API_SECURITY_TOKEN'),
         'business_unit_id'        => env('PARDOT_BUSINESS_UNIT_ID'),
         'consumer_key'            => env('PARDOT_CONSUMER_KEY'),
-        'consumer_secret'         => env('PARDOT_CONSUMER_SECRET')
+        'consumer_secret'         => env('PARDOT_CONSUMER_SECRET'),
+        'api_version'             => env('PARDOT_CONNECTION_API_VERSION'),
       ],
 
       //...
