@@ -17,6 +17,7 @@
     public function connect($config, $connection = null)
     {
       $connection              = $connection ?? $config->get("pardot.default");
+      $default_api_version     = $config->get("pardot.default_api_version");
       $email                   = $config->get("pardot.connections.{$connection}.email");
       $password                = $config->get("pardot.connections.{$connection}.password");
       $user_key                = $config->get("pardot.connections.{$connection}.user_key");
@@ -25,11 +26,12 @@
       $business_unit_id        = $config->get("pardot.connections.{$connection}.business_unit_id");
       $consumer_key            = $config->get("pardot.connections.{$connection}.consumer_key");
       $consumer_secret         = $config->get("pardot.connections.{$connection}.consumer_secret");
+      $api_version             = $config->get("pardot.connections.{$connection}.api_version") ?? $default_api_version;
       $exception_handler       = $config->get("pardot.exception_handler");
 
       $this->client = new PardotApi(
         $auth_type, $email, $password, $user_key, $user_api_security_token,
-        $business_unit_id, $consumer_key, $consumer_secret, $exception_handler
+        $business_unit_id, $consumer_key, $consumer_secret, $exception_handler, $api_version
       );
 
       if($config->get("pardot.debug") == true) {
